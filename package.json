@@ -1,0 +1,8 @@
+{
+  "name": "band-name-radio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node --check dist/app.js && node --check dist/words.js"
+  }
+}

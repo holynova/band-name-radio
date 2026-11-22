@@ -1,0 +1,59 @@
+:root {
+  color-scheme:light;
+  --ink:#191916;
+  --muted:#65605a;
+  --accent:#ab4919;
+  font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  color:var(--ink);
+  background:#faf8f2;
+}
+* { box-sizing:border-box }
+body { margin:0; min-height:100vh; min-height:100svh; display:flex; flex-direction:column; background-image:radial-gradient(ellipse at 50% 46%,#fffefa 0%,transparent 68%),radial-gradient(#c8c0b980 .65px,transparent .8px); background-size:auto,20px 20px; }
+button,a { -webkit-tap-highlight-color:transparent }
+button { color:inherit; font:inherit; cursor:pointer }
+button:focus-visible,a:focus-visible { outline:3px solid var(--accent);outline-offset:5px }
+header,footer { width:min(89%,1152px); margin:0 auto; display:flex; align-items:center; justify-content:space-between }
+header { padding:24px 0 15px }
+.brand { display:flex; align-items:center; gap:10px; font-size:16px; letter-spacing:.1em; font-weight:750 }
+.sound { background:transparent; border:1px solid #d7d3c9; border-radius:30px; padding:7px 13px; display:flex;align-items:center; gap:8px; font-size:14px }
+.bars { height:14px; display:flex; align-items:center; gap:2px }
+.bars i { width:2px; height:3px; background:currentColor; border-radius:2px }
+.sound[aria-pressed=true] .bars i:nth-child(2n){height:11px}
+.sound[aria-pressed=true] .bars i:nth-child(3){height:7px}
+main { flex:1; display:grid; place-items:center; text-align:center; padding:clamp(32px,5vh,66px) 0 }
+.tuner { width:100%; position:relative }
+h1 { margin:0; font-size:clamp(18px,2.1vw,25px); font-weight:750; letter-spacing:.16em; text-indent:.16em }
+.intro { color:var(--muted); font-size:16px; margin:11px 0 0 }
+.display { display:grid; place-items:center; margin:clamp(24px,5vh,52px) 0 0; min-height:clamp(88px,11.7vw,166px); padding:0 3vw }
+.name { background:none; border:0; padding:3px 2px 8px; font-weight:900; font-size:min(10.5vw,148px,calc(88vw / var(--chars,4))); letter-spacing:-.045em; line-height:1.14; white-space:nowrap; font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif; }
+.name span { display:inline-block }
+#right { color:var(--accent) }
+.mark { width:49px; height:4px; background:var(--accent); border-radius:3px; margin:clamp(12px,2.6vh,29px) auto 0 }
+.egg { color:var(--accent); font-size:14px; font-weight:650; margin:12px auto -12px }
+.generate { display:inline-flex;align-items:center;justify-content:center;gap:12px; border-radius:40px; border:0; background:#1b1b19; color:white; padding:0 34px; min-width:144px; min-height:54px; font-weight:700; letter-spacing:.14em; margin:clamp(24px,4.7vh,48px) auto 0;box-shadow:0 5px 12px #29241a1c }
+.generate:hover { background:#34332e }
+.generate:active { transform:translateY(2px) }
+.hint { font-size:14px; color:var(--muted); margin:17px 0 0 }
+kbd { font:inherit; padding:1px 5px; border:1px solid #d4d0c6; border-bottom-width:2px; border-radius:4px; background:#fffdf8 }
+.sep { margin:0 9px; color:#938d83 }
+.mobile { display:none }
+.recent { width:min(730px,92%); min-height:75px; margin:clamp(26px,5vh,54px) auto 0 }
+.recent h2 { font-size:13px; letter-spacing:.14em; color:var(--muted); font-weight:500; margin:0 0 11px }
+#history { display:flex; justify-content:center; flex-wrap:wrap; gap:8px }
+.chip { font-size:14px; border:1px solid #dcd8ce; border-radius:100px; padding:7px 13px; background:#fffdf8; line-height:1.2 }
+.chip[aria-current=true] { border-color:var(--accent); color:var(--accent) }
+.chip:hover,.sound:hover { background:#f0ede4 }
+footer { border-top:1px solid #dad6cb; padding:15px 0 19px; color:var(--muted); font-size:13px; letter-spacing:.025em }
+footer b { color:#504d47; font-weight:600; font-variant-numeric:tabular-nums }
+a { color:inherit; text-decoration:underline; text-underline-offset:4px; text-decoration-color:#bcb6ac }
+.sr { position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%) }
+@media(max-width:650px) {
+  header,footer { width:calc(100% - 36px) }
+  header { padding:15px 0 8px }
+  .display { min-height:100px; margin-top:24px }
+  .name { font-size:min(19.5vw,calc(89vw / var(--chars,4))) }
+  .intro { font-size:15px }
+  .recent { min-height:92px }
+  .generate { min-height:50px; min-width:132px }
+}
+@media(pointer:coarse) { .desktop { display:none } .mobile { display:inline } }

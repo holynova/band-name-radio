@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#faf8f2">
+  <title>双词电台 · 乐队名生成器</title>
+  <meta name="description" content="一个词给气氛，一个词给画面。点一下，从 94,864 个组合里抽出你的乐队名。">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="words.js"></script>
+  <script defer src="app.js"></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="e01c9f78-4607-4e60-b01c-77c8190b12b4"></script>
+</head>
+<body>
+  <header>
+    <div class="brand"><img src="icon.svg" width="32" height="32" alt="">双词电台</div>
+    <button class="sound" id="sound" type="button" aria-pressed="false" title="切换生成与重放音效"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="sound-label">声音关</span></button>
+  </header>
+  <main>
+    <section class="tuner" aria-labelledby="page-title">
+      <h1 id="page-title">乐队名生成器</h1>
+      <p class="intro">抽一个氛围词，撞上一个具体的东西。</p>
+      <div class="display">
+        <button type="button" id="name" class="name" title="重放这个名字" aria-label="重放当前乐队名"><span id="left"></span><span id="right"></span></button>
+      </div>
+      <div class="mark" aria-hidden="true"></div>
+      <div id="egg" class="egg" hidden></div>
+      <button class="generate" id="generate" type="button"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" transform="rotate(-9 12 12)"/><g fill="currentColor" stroke="none"><circle cx="8" cy="9" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="16" cy="15" r="1.4"/></g></svg>生成</button>
+      <p class="hint"><span class="desktop">按 <kbd>空格</kbd> 或点击空白处换一个</span><span class="mobile">轻点空白处换一个</span><span class="sep">·</span>点名字重放</p>
+      <section class="recent" aria-labelledby="recent-title">
+        <h2 id="recent-title">最近抽到</h2>
+        <div id="history"></div>
+      </section>
+    </section>
+    <p class="sr" role="status" id="announce"></p>
+    <noscript>请开启 JavaScript 以抽取乐队名。</noscript>
+  </main>
+  <footer><span><b>308 × 308</b><span class="sep">/</span>94,864 种组合</span><a href="https://xhslink.cn/o/6rWIrzSES6B" target="_blank" rel="noopener noreferrer">玩法来源</a><a href="https://github.com/holynova/band-name-radio" rel="noopener">GitHub · v1.0.0</a></footer>
+</body>
+</html>
